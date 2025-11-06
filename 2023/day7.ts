@@ -59,12 +59,12 @@ function totalWinnings(sets: Array<{ cards: string; bid: string }>): number {
 
   return setsWithPoints.reduce(
     (total, current, index) => total + (index + 1) * Number(current[1]),
-    0
+    0,
   );
 }
 
 function totalWinningsWithJoker(
-  sets: Array<{ cards: string; bid: string }>
+  sets: Array<{ cards: string; bid: string }>,
 ): number {
   const cardValues = {
     J: 1,
@@ -136,10 +136,8 @@ function totalWinningsWithJoker(
 
   return setsWithPoints.reduce(
     (total, current, index) => total + (index + 1) * Number(current[1]),
-    0
+    0,
   );
-
-  return 0;
 }
 
 const input = await readTextFile("./2023/assets/day7.txt");
@@ -148,8 +146,8 @@ const sets = input
   .map((card) => card.split(" "))
   .map((set) => ({ cards: set[0], bid: set[1] }));
 
-// const p1 = totalWinnings(sets);
-// console.log(p1);
+const p1 = totalWinnings(sets);
+console.log(p1);
 
 const p2 = totalWinningsWithJoker(sets);
 console.log(p2);

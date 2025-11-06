@@ -67,7 +67,6 @@ function doesGuardLoop(
   while (true) {
     const state = `${y},${x},${currentDir}`;
     if (visited.has(state)) {
-      // We've been in the same position and direction before -> loop!
       return true;
     }
     visited.add(state);
@@ -75,7 +74,6 @@ function doesGuardLoop(
     const [dy, dx] = dirVal[currentDir];
 
     if (isOutOfBounds(y + dy, x + dx, totalRows, totalCols)) {
-      // guard leaves map -> no loop
       return false;
     }
 
