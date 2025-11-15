@@ -74,7 +74,7 @@ function solution_p2(data: string[]): number {
   return min;
 }
 
-const input = await readTextFile("./tb.txt");
+const input = await readTextFile("./2022/asseets/day12.txt");
 const data = input.split("\n");
 
 const p1 = solution_p1(data, getStart(data));
